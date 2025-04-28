@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import SearchIcon from '../assets/icon-search.svg';
 
-function SearchBar({ setUsername, fetchUserData }) {
+function SearchBar({ fetchUserData }) {
   const [input, setInput] = useState('');
 
-  const handleSearch = () => {
-    setUsername(input);
+  const handleSearch = (e) => {
+    e.preventDefault();
     fetchUserData(input);
   };
 
   return (
-    <div className="flex bg-lightCard dark:bg-darkCard p-2 rounded-xl shadow-md relative">
+    <form onSubmit={handleSearch} className="flex bg-lightCard dark:bg-darkCard p-2 rounded-xl shadow-md relative">
       <img
         src={SearchIcon}
         alt="Search Icon"
@@ -24,12 +24,12 @@ function SearchBar({ setUsername, fetchUserData }) {
         onChange={(e) => setInput(e.target.value)}
       />
       <button
-        onClick={handleSearch}
+        type="submit"
         className="bg-blue text-white py-2 px-4 rounded-lg hover:bg-blue/90 transition-all"
       >
         Search
       </button>
-    </div>
+    </form>
   );
 }
 
