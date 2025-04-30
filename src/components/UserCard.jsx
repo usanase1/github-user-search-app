@@ -38,7 +38,7 @@ function UserCard({ user }) {
             </div>
           </div>
 
-          {/* The icons part here */}
+      
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 text-secondaryText dark:text-grayText text-sm">
             <div className="flex items-center gap-3">
               <img src={LocationIcon} alt="Location" className="w-5 h-5" />
